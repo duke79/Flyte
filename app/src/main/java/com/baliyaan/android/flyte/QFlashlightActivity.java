@@ -17,6 +17,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
+import com.baliyaan.android.library.ads.Interstitial;
+
 public class QFlashlightActivity extends Activity {
 	
 	Integer oriBrightnessValue;
@@ -54,6 +56,11 @@ public class QFlashlightActivity extends Activity {
 				toggleFlashLight();
 			}
 		});
+		/*
+         * Show Ad every 5 minutes
+         */
+		Interstitial interstitialAd = new Interstitial(this,"ca-app-pub-4278963888720323/1964867694");
+		interstitialAd.showEvery(300000,true); // every 5 minutes
 	}
 	
 	/**
